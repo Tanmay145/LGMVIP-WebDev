@@ -18,8 +18,8 @@ html{
   }
 h1{
     text-align: center;
-    color:black;
-    margin: 0.5rem;
+    color:rgb(70, 4, 70);
+    margin: 0.8rem;
     font-size: 1.5rem;
 }
 nav{
@@ -64,12 +64,10 @@ nav ul a:hover{
     border-style: solid;
     margin-top: 60px;
 }
-#Desti{
-    
-}
 .heading2{
     text-align: center;
-    padding: 20px;
+    padding: 80px;
+    
 }
 .dest img{
     width: 395px;
@@ -83,7 +81,7 @@ nav ul a:hover{
 .Dests{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    padding: 30px 120px;
+    padding: 0px 120px;
     grid-column-gap: 20px;
     grid-row-gap: 30px;
 }
