@@ -4,6 +4,10 @@
     font-family:sans-serif;
     box-sizing: border-box;
 }
+body{
+   /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTDvKskqKCJDsNXJIIsbWHrnx0wfGXnpiHOQ&usqp=CAU);
+    background-size: cover;*/
+}
 .Home{
     position: absolute;
 }
@@ -13,13 +17,19 @@ nav{
     position: fixed;
     width: 100%;
     justify-content: space-between;
-    padding: 15px;
+    padding: 25px;
+    top: 0rem;
+    z-index: 100;
+}
+nav:hover{
+  background-color:brown;
+  transition: 2s;
 }
 .nav h2{
     color: blueviolet;
 }
 .nav button{
-    padding: 5px 10px;
+    padding: 5px 6px;
     border: none;
     outline: none;
     background-color: red;
@@ -34,10 +44,9 @@ nav{
     grid-template-columns: repeat(3, 2fr);
     gap: 50px;
     margin: 1rem;
-    padding: 50px 130px;
+    padding: 100px 130px;
 }
 .card{
-    
     padding: 1rem;
     margin: 2rem;
     text-align: center;
@@ -45,6 +54,11 @@ nav{
      background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBtwFeSM3tOZZ8B3O978yl__PNymMQAuN_Og&usqp=CAU);
      height: 50vh;
      border-radius: 35px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
 }
 .pic img{
     border-radius: 100px;
@@ -66,4 +80,26 @@ nav{
     border-radius: 50%;
     color: black;
   }
-
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    border-left: 16px solid pink;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin-top: 200px;
+  }
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

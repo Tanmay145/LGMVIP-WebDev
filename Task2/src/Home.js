@@ -1,11 +1,18 @@
 
 import React, { useState } from "react";
 const Home = () => {
+    const [isDataFetch, setisDataFetch] = useState(false);
+    const [isBtnClick, setisBtnClick] = useState(false);
     const [users, setUser] = useState([]);
     const onclick = async () => {
-        const response = await fetch("https://reqres.in/api/users?page=1");
-        const jsonresponse = await response.json();
-        setUser(jsonresponse.data);
+         setisBtnClick(true);
+        const res = await fetch("https://reqres.in/api/users?page=1");
+        const jsonres = await res.json();
+        setUser(jsonres.data);
+
+        setInterval(() => {
+            setisDataFetch(true);
+          }, 5500);
         //ok 
     };
     return (
@@ -20,6 +27,8 @@ const Home = () => {
                     </div>
                 </nav>
             </div>
+            {isBtnClick ?(
+            isDataFetch ? (
             <div className="usrcard">
                 {users.map(({ id, first_name, last_name, avatar, email }) => {
                     return (
@@ -45,6 +54,12 @@ const Home = () => {
                 })}
 
             </div>
+            ) : (
+                <div className="loader"></div>
+            )
+            ) : (
+                <> </>
+            )}
         </div>
     );
 
