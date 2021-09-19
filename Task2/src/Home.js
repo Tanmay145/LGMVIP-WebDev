@@ -1,18 +1,18 @@
 
 import React, { useState } from "react";
 const Home = () => {
-    const [isDataFetch, setisDataFetch] = useState(false);
-    const [isBtnClick, setisBtnClick] = useState(false);
+    const [fetched, setfetched] = useState(false);
+    const [clicked, setclicked] = useState(false);
     const [users, setUser] = useState([]);
     const onclick = async () => {
-         setisBtnClick(true);
+         setclicked(true);
         const res = await fetch("https://reqres.in/api/users?page=1");
         const jsonres = await res.json();
         setUser(jsonres.data);
 
         setInterval(() => {
-            setisDataFetch(true);
-          }, 5500);
+            setfetched(true);
+          }, 3000);
         //ok 
     };
     return (
@@ -27,8 +27,8 @@ const Home = () => {
                     </div>
                 </nav>
             </div>
-            {isBtnClick ?(
-            isDataFetch ? (
+            {clicked ?(
+            fetched ? (
             <div className="usrcard">
                 {users.map(({ id, first_name, last_name, avatar, email }) => {
                     return (
