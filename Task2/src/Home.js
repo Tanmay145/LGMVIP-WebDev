@@ -13,7 +13,6 @@ const Home = () => {
         setInterval(() => {
             setfetched(true);
           }, 3000);
-        //ok 
     };
     return (
         <div className="Home">
